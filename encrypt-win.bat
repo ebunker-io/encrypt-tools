@@ -3,16 +3,16 @@ SET folder_exist=ebunker
 SET pubkey_exist=ebunker-public-key.gpg
 
 if not exist %folder_exist% (
-echo "´íÎó£ºebunkerÎÄ¼ş¼Ğ²»´æÔÚ£¬Çë´´½¨ebunkerÎÄ¼ş¼Ğ£¬²¢·ÅÈëkeystoreÎÄ¼şºÍÃÜÂëÎÄ±¾¡£ÈçÒÑ´´½¨£¬Çë¼ì²éÎÄ¼ş¼ĞÃû³ÆÎªebunker"
-echo "²Î¿¼ÎÄµµ£ºhttps://docs.ebunker.io/docs/keystore"
+echo "é”™è¯¯ï¼šebunkeræ–‡ä»¶å¤¹ä¸å­˜åœ¨ï¼Œè¯·åˆ›å»ºebunkeræ–‡ä»¶å¤¹ï¼Œå¹¶æ”¾å…¥keystoreæ–‡ä»¶å’Œå¯†ç æ–‡æœ¬ã€‚å¦‚å·²åˆ›å»ºï¼Œè¯·æ£€æŸ¥æ–‡ä»¶å¤¹åç§°ä¸ºebunker"
+echo "å‚è€ƒæ–‡æ¡£ï¼šhttps://docs.ebunker.io/docs/keystore"
 pause
 exit
 )
 
 if not exist %pubkey_exist% (
-echo "´íÎó£º¼ÓÃÜ¹«Ô¿Î´ÕÒµ½£¬Çë´ÓÓÊ¼şÖĞÏÂÔØ¸½¼ş ebunker-public-key.gpgµ½×ÀÃæ"
-echo "ÈçÒÑÏÂÔØ£¬Çë¼ì²éÎÄ¼şÃû³ÆÎªebunker-public-key.gpg"
-echo "²Î¿¼ÎÄµµ£ºhttps://docs.ebunker.io/docs/keystore"
+echo "é”™è¯¯ï¼šåŠ å¯†å…¬é’¥æœªæ‰¾åˆ°ï¼Œè¯·ä»é‚®ä»¶ä¸­ä¸‹è½½é™„ä»¶ ebunker-public-key.gpgåˆ°æ¡Œé¢"
+echo "å¦‚å·²ä¸‹è½½ï¼Œè¯·æ£€æŸ¥æ–‡ä»¶åç§°ä¸ºebunker-public-key.gpg"
+echo "å‚è€ƒæ–‡æ¡£ï¼šhttps://docs.ebunker.io/docs/keystore"
 pause
 exit
 )
@@ -24,7 +24,7 @@ powershell Compress-Archive -Path ebunker -DestinationPath ebunker-keystore_%tim
 gpg --import ebunker-public-key.gpg
 gpg --recipient ebunker --output ebunker-keystore_%timestamp%.gpg --encrypt ebunker-keystore_%timestamp%.zip
 
-
-echo ÎÄ¼şÒÑÉú³É£¬ÎÄ¼şÃû ebunker-keystore_%timestamp%.gpg £¬Î»ÖÃ£º×ÀÃæ
+CHCP 936
+echo æ–‡ä»¶å·²ç”Ÿæˆï¼Œæ–‡ä»¶å ebunker-keystore_%timestamp%.gpg ï¼Œä½ç½®ï¼šæ¡Œé¢
 pause
 exit

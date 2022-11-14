@@ -25,5 +25,6 @@ echo "5. 导入加密公钥......"
 gpg --import ebunker-public-key.gpg
 echo "6. 加密keystore......"
 gpg --recipient ebunker --output ebunker-keystore_${time}.gpg --encrypt ebunker-keystore_${time}.tar.gz
+rm ebunker-keystore_${time}.tar.gz
 echo "恭喜！！您的keystore加密完成，文件为: ebunker-keystore_${time}.gpg"
 echo "恭喜！！请将文件ebunker-keystore_${time}.gpg回复到eBunker邮箱，参考文档：https://docs.ebunker.io/docs/keystore"

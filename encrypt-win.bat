@@ -24,7 +24,14 @@ powershell Compress-Archive -Path ebunker -DestinationPath ebunker-keystore_%tim
 gpg --import ebunker-public-key.gpg
 gpg --recipient ebunker --output ebunker-keystore_%timestamp%.gpg --encrypt ebunker-keystore_%timestamp%.zip
 
+del ebunker-keystore_%timestamp%.zip
+
+
+SET gpg_file=ebunker-keystore_%timestamp%.gpg
+
 CHCP 936
+if exist %gpg_file% (
 echo 文件已生成，文件名 ebunker-keystore_%timestamp%.gpg ，位置：桌面
+)
 pause
 exit
